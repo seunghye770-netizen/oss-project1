@@ -101,6 +101,11 @@ class Game:
         self.bullets.update()
         self.enemies.update()
 
+        hits = pygame.sprite.groupcollide(
+            self.enemies, self.bullets, True, True
+        )
+        self.score += len(hits) * SCORE_PER_ENEMY
+        
         # TODO(F3): 총알과 적이 부딪히면 둘 다 없애고, 맞힌 적 하나당 SCORE_PER_ENEMY 점을 더할 것.
         #           힌트: pygame.sprite.groupcollide
 
