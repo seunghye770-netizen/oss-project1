@@ -206,6 +206,20 @@ class Game:
             center=(cx, cy + 10)
         )
 
+        self.draw_text(
+            f"HIGH SCORE: {self.high_score}",
+            self.font,
+            YELLOW,
+            center=(cx, cy + 50)
+        )
+
+        self.draw_text(
+            "Press R to restart",
+            self.font,
+            WHITE,
+            center=(cx, cy + 100)
+        )
+
     # ---------------- 게임 루프 ----------------
     def step(self):
         """한 프레임: 입력 → 갱신 → 그리기."""
