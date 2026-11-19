@@ -115,11 +115,12 @@ class Game:
             self.player, self.enemies, True
         )
         self.lives -= len(collisions)
-        
+
         # 화면 아래로 지나간 적은 없앨 것.
         for enemy in list(self.enemies):
             if enemy.rect.top > HEIGHT:
                 enemy.kill()
+                self.lives -= 1
                 # TODO(F4): 적이 아래로 지나갔으니 생명을 1 줄일 것.
 
         # TODO(F4): 생명이 0 이하가 되면 self.end_game() 을 실행할 것.
